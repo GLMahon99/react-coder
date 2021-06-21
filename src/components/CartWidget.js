@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function iconCart(props){
+const styleWidget = {
+    color : "white"
+
+}
+function CartWidget(props){
     return(
-        <i class="bi bi-cart"></i>
+        <img style={styleWidget} src=""></img>
     )
     
 }
 
-export default iconCart;
+export default CartWidget;

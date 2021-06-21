@@ -1,16 +1,26 @@
 import React from 'react';
 
-function itemListContainer(greting){
+const styleItem = {
+    color: "black",
+    fontFamily: "arial",
+    fontSize: "15px",
+}
+
+function ItemListContainer(greting){
  return(
-    <div class="card" style="width: 18rem;">
-        <img src="" className="card-img-top" alt=""></img>
-            <div class="card-body">
-            <h5 className ="card-title">Card title</h5>
-            <p className="card-text"></p>
-            <a href="#" className="btn btn-primary"></a>
+    <div className="">
+        <h5 style={styleItem}>Titulo Producto</h5>
+        <div>
+            <img>imagen</img>
+            <ul>
+                <li style={styleItem}>description</li>
+                <li style={styleItem}>description</li>
+                <li style={styleItem}>description</li>
+            </ul>
         </div>
+        
     </div>
     )
 }
 
-export default itemListContainer
+export default ItemListContainer;
