@@ -11,7 +11,7 @@ function ItemListContainer(greting){
     <div className="">
         <h5 style={styleItem}>Titulo Producto</h5>
         <div>
-            <img>imagen</img>
+            <img></img>
             <ul>
                 <li style={styleItem}>description</li>
                 <li style={styleItem}>description</li>
