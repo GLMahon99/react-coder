@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemCount from './ItemCount';
 
 const styleItem = {
     color: "black",
@@ -18,7 +19,7 @@ function ItemListContainer(greting){
                 <li style={styleItem}>description</li>
             </ul>
         </div>
-        
+        <ItemCount stock={3} initial={1}/>
     </div>
     )
 }
