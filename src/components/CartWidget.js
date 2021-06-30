@@ -1,12 +1,12 @@
 import React from 'react';
-
-const styleWidget = {
-    color : "white"
-
-}
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 function CartWidget(props){
+
     return(
-        <img style={styleWidget} src=""></img>
+        <div>
+            <AddShoppingCartIcon style={{color:'white'}}/>
+        </div>
+        
     )
     
 }
