@@ -10,11 +10,46 @@ const data = [
         description: "lorem ipsum",
         pictureUrl:""
     },
-]
+    {
+        id: "TPE02",
+        title: "tapones moldeables",
+        price: 1680,
+        description: "lorem ipsum",
+        pictureUrl:""
+    },
+    {
+        id: "TPE03",
+        title: "tapones moldeables",
+        price: 1320,
+        description: "lorem ipsum",
+        pictureUrl:""
+    },
+    {
+        id: "TPE04",
+        title: "tapones moldeables",
+        price: 1320,
+        description: "lorem ipsum",
+        pictureUrl:"",
+    },
+    {
+        id: "TPE05",
+        title: "tapones moldeables",
+        price: 1680,
+        description: "lorem ipsum",
+        pictureUrl:""
+    },
+    {
+        id: "TPE06",
+        title: "tapones moldeables",
+        price: 1680,
+        description: "lorem ipsum",
+        pictureUrl:""
+    }
+];
 
 
 
-function ItemListContainer(greting){
+function ItemListContainer(){
 
     const [data, setData] = useState();
  
@@ -28,8 +63,7 @@ function ItemListContainer(greting){
     })
 
     return(
-        <div className="" style={{width:'40%'}}>
-            <h5 style={{color:'white', backgroundColor:'blue'}}>Titulo Producto</h5>
+        <div >
             <ItemList/>
             <ItemCount stock={3} initial={1}/>
         </div>

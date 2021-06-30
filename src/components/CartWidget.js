@@ -1,6 +1,6 @@
 import React from 'react';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-function CartWidget(props){
+function CartWidget(){
 
     return(
         <div>
