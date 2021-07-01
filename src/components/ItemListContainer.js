@@ -1,8 +1,21 @@
 import React,{useState, useEffect} from 'react';
 import ItemCount from './ItemCount';
 import ItemList from './ItemList';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-const data = [
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+  },
+}));
+
+
+
+const dataProduct = [
     {
         id: "TPE01",
         title: "tapones moldeables",
@@ -50,21 +63,35 @@ const data = [
 
 
 function ItemListContainer(){
-
-    const [data, setData] = useState();
+    const classes = useStyles();
+    const [data, setData] = useState([]);
+    const [loading , setLoading] = useState(false);
+    
  
     useEffect(()=>{
+        //cuando entres a esta promise,dime que esta seteado en true
+        setLoading(true)
         new Promise((resolve, reject)=>{
-            setTimeout(resolve(data), 2000);
+            setTimeout(() => resolve(dataProduct), 5000);
         }).then(
-            function(referenceResolve){
-            setData(referenceResolve);
+            (dataResolve) => {
+            setData(dataResolve);
+            //pero una vez que la resuelva setea como false
+            setLoading(false);
         })
     })
-
+    //condicion si esta cargando o no
+    if(loading){
+        return(
+            <div className={classes.root}>
+      <CircularProgress />
+      
+    </div>
+        )
+    }
     return(
         <div >
-            <ItemList/>
+            {data.map((item) => <ItemList {...item}/>)}
             <ItemCount stock={3} initial={1}/>
         </div>
         )

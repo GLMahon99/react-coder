@@ -4,24 +4,19 @@ import CartWidget from './CartWidget'
 const styleNavbar = {
     backgroundColor: "blue",
     width: "100%",
+    heigth: "60px"
 }
 const styleItemNavbar = {
     color: "white",
     textDecoration: "none",
     marginLeft: "40px",
-    marginRight: "40px"
+    marginRight: "40px",
 }
 
 function NavBar(){
     return(
             <div style={styleNavbar} >
                 <nav >
-                    <div >
-                        <a  href="#"><img ></img></a>
-                        <a  href="#"><img ></img></a>
-                        <button >
-                            <span ></span>
-                        </button>
                         <div >
                             <div >
                                 <a style={styleItemNavbar} href="#section-inicio">Inicio</a>
@@ -32,7 +27,6 @@ function NavBar(){
                                 <CartWidget/>
                             </div>
                         </div>
-                    </div>
                 </nav>
             </div>
         

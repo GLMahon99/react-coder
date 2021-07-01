@@ -3,9 +3,9 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 function CartWidget(){
 
     return(
-        <div>
+        <a>
             <AddShoppingCartIcon style={{color:'white'}}/>
-        </div>
+        </a>
         
     )
     

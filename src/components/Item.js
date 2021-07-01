@@ -30,7 +30,7 @@ const useStyles = makeStyles({
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {id}+{price}
+              {price}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {description}
