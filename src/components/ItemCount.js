@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Button from '@material-ui/core/Button'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let ItemCount = ({stock, onAdd, initial} ) =>{
 
@@ -21,9 +21,9 @@ let ItemCount = ({stock, onAdd, initial} ) =>{
     return(
         <div>
             <p>{count}</p>
-            <Button size="medium" variant="outlined" color="secondary" onClick={addCount}>+</Button>
-            <Button size="medium" variant="outlined" color="primary" onClick={outCount}>-</Button>
-            <Button size="medium" variant="outlined" onClick={onAdd}>Agregar al carrito</Button>
+            <button type="button" className="btn btn-primary mx-1"  onClick={addCount}>+</button>
+            <button type="button" className="btn btn-secondary mx-1" onClick={outCount}>-</button>
+            <button type="button" className="btn btn-warning mx-1"  onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 

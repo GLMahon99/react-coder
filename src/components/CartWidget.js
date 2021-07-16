@@ -1,10 +1,10 @@
 import React from 'react';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { Cart2 } from 'react-bootstrap-icons';
 function CartWidget(){
 
     return(
         <a>
-            <AddShoppingCartIcon style={{color:'white'}}/>
+            <Cart2 style={{color:'white', fontSize:"25px"}}/>
         </a>
         
     )

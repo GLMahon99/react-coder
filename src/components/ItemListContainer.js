@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import ItemCount from './ItemCount';
+
 import ItemList from './ItemList';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -15,50 +15,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const dataProduct = [
-    {
-        id: "TPE01",
-        title: "tapones moldeables",
-        price: 1680,
-        description: "lorem ipsum",
-        pictureUrl:""
-    },
-    {
-        id: "TPE02",
-        title: "tapones moldeables",
-        price: 1680,
-        description: "lorem ipsum",
-        pictureUrl:""
-    },
-    {
-        id: "TPE03",
-        title: "tapones moldeables",
-        price: 1320,
-        description: "lorem ipsum",
-        pictureUrl:""
-    },
-    {
-        id: "TPE04",
-        title: "tapones moldeables",
-        price: 1320,
-        description: "lorem ipsum",
-        pictureUrl:"",
-    },
-    {
-        id: "TPE05",
-        title: "tapones moldeables",
-        price: 1680,
-        description: "lorem ipsum",
-        pictureUrl:""
-    },
-    {
-        id: "TPE06",
-        title: "tapones moldeables",
-        price: 1680,
-        description: "lorem ipsum",
-        pictureUrl:""
-    }
-];
+const dataProduct = async () => {
+    const data = await fetch("./src/api.json")
+    const product = await data.json();
+    console.log(product);
+};
 
 
 
@@ -79,7 +40,7 @@ function ItemListContainer(){
             //pero una vez que la resuelva setea como false
             setLoading(false);
         })
-    })
+    }, [])
     //condicion si esta cargando o no
     if(loading){
         return(
@@ -92,7 +53,7 @@ function ItemListContainer(){
     return(
         <div >
             {data.map((item) => <ItemList {...item}/>)}
-            <ItemCount stock={3} initial={1}/>
+            
         </div>
         )
 }
