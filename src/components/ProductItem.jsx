@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const ProductItem = (titulo, img) => {
     return ( 
         <>
             <Link to={`/products/${1}`}>
             <div className="col my-2">
                     <div className="card">
-                        <img src="img" class="card-img-top" alt="..."/>
+                        <img src={img} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">{titulo}</h5>
                         </div>
