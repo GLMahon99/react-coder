@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import ProductsList from '../components/ProductsList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -108,6 +108,8 @@ const dataBase = [{
 
                 }]
 
+
+
 const Products = () => {
 
 const [dataProducts, setDataProducts] = useState();
@@ -134,23 +136,25 @@ if(loading){
                 <span className="visually-hidden">Loading...</span>
             </div>
         </div>
-        
     )
-    
 }
+if(dataBase.length !== 0){
+    console.log('array lleno')
+};
 
 
     return ( 
         <>
             <h1 style={{marginTop:"70px"}}>productos</h1>
             <div className="row row-cols-3 container-fluid mx-2">
-
-                <Link to={`/products/${1}`}>{dataProducts.map((item, key) => <ProductsList {...item}/> )}</Link>
+                <ProductsList dataProducts={dataProducts}/>
+                
+                {/* <Link to={`/products/${1}`}></Link>
                 <Link to={`/products/${2}`}><ProductsList/></Link>
                 <Link to={`/products/${3}`}><ProductsList/></Link>
                 <Link to={`/products/${4}`}><ProductsList/></Link>
                 <Link to={`/products/${5}`}><ProductsList/></Link>
-                <Link to={`/products/${6}`}><ProductsList/></Link>
+                <Link to={`/products/${6}`}></Link> */}
             </div>
         </>
      );

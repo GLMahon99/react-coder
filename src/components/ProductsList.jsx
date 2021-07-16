@@ -1,18 +1,12 @@
 import React from 'react';
+import ProductItem from './ProductItem';
 
-const ProductsList = (titulo,) => {
+
+const ProductsList = ({dataProducts}) => {
     return ( 
         <>
-            
-                <div className="col my-2">
-                    <div className="card">
-                        <img src="https://via.placeholder.com/200" class="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">{titulo}</h5>
-                        </div>
-                        
-                    </div>
-                </div>
+            {dataProducts.map((item) => <ProductItem {...item}/> )}
+                
             
         </>
      );
