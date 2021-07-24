@@ -10,13 +10,13 @@ const styleTitle = {
 
 }
 
-const ProductItem = ({titulo, img}) => {
+const ProductItem = ({titulo, img, id}) => {
     return ( 
         <>
             { !titulo && !img ? (
                 <p>cargando productos</p>
             ) : (
-            <Link style={{textDecoration: "none"}} to={`/products/${1}`}>
+            <Link style={{textDecoration: "none"}} to={`/products/${id}`}>
             <div className="col my-2">
                     <div className="card">
                         <img src={img} className="card-img-top" alt="..."/>

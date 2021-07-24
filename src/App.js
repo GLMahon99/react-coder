@@ -1,5 +1,7 @@
 import React from 'react';
 
+//CONTEXT
+import { ContextProvider } from './context/Context';
 //components
 import Navbar from './components/NavBar';
 //import ItemListContainer from './components/ItemListContainer';
@@ -16,6 +18,7 @@ import ProductsDetail from './pages/ProductsDetail';
 function App() {
   return (
     <div className="App">
+      <ContextProvider>
       <Router>
         <Navbar/>
         <Switch>
@@ -23,7 +26,7 @@ function App() {
             <Home/>
           </Route>
         
-        
+          
           <Route exact path="/products">
             <Products/>
           </Route>
@@ -33,18 +36,20 @@ function App() {
           </Route>
         
         
-          <Route path="/about">
-            <About/>
-          </Route>
-        
-        
           <Route path="/cart">
             <Cart/>
           </Route>
+          
+
+          <Route path="/about">
+            <About/>
+          </Route>
+
         </Switch>
         
       
-      </Router>  
+      </Router> 
+      </ContextProvider> 
     </div>
     
   );
