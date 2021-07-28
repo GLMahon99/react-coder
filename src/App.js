@@ -27,7 +27,7 @@ function App() {
           </Route>
         
           
-          <Route exact path="/products">
+          <Route exact path="/categories/:categoryId">
             <Products/>
           </Route>
 

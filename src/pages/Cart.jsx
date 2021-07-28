@@ -1,7 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useContext} from '../context/Context'
 
 const Cart = () => {
+
+    const {list} = useContext();
+
+
     return ( <>
         <h1 style={{marginTop:"70px"}}>Carrito de compras</h1>
         <div className="container">

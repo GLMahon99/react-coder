@@ -2,7 +2,9 @@ import React, {useEffect, useState} from 'react';
 // import { Link } from 'react-router-dom';
 import ProductsList from '../components/ProductsList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useContext} from '../context/Context';
+import dataBase from '../components/ProductsData';
+import { useParams } from 'react-router-dom';
+
 
 
 //PETICION API FUTURA
@@ -15,22 +17,27 @@ import {useContext} from '../context/Context';
 
 const Products = () => {
 
-    const { dataProducts, setDataProducts } = useContext();
+    const [ dataProducts, setDataProducts ] = useState([]);
     const [loading , setLoading] = useState(false);
+    const {categoryId} = useParams();
 
+    
     useEffect(()=>{
         //cuando entres a esta promise,dime que esta seteado en true
         setLoading(true)
         new Promise((resolve, reject)=>{
-            setTimeout(() => resolve(dataProducts), 3000);
+            setTimeout(() => resolve(
+                categoryId ? dataBase.filter((product) => product.categoryId === categoryId) : dataBase )
+                , 3000);
         }).then(
             (dataResolve) => {
             setDataProducts(dataResolve);
             //pero una vez que la resuelva setea como false
+            
             setLoading(false);
         })
-    }, [])
-
+    }, [categoryId])
+    console.log(dataProducts)
     if(loading){
         return(
             <div className="position-absolute top-50 start-50 translate-middle" >
@@ -40,12 +47,13 @@ const Products = () => {
             </div>
         )
     }
+    
 
     return ( 
         <>
             <h1 style={{marginTop:"70px"}}>productos</h1>
             <div className="row row-cols-3 container-fluid mx-2">
-                <ProductsList/>
+                <ProductsList dataProducts={dataProducts}/>
                 
                 {/* <Link to={`/products/${1}`}></Link>
                 <Link to={`/products/${2}`}><ProductsList/></Link>
