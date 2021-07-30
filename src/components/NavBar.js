@@ -45,7 +45,7 @@ function NavBar(){
                                 <div className="nav-item dropdown">
                                     <a style={styleLink} className="nav-link active mx-3 dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Productos</a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style={styleDropdownMenu}>
-                                    <Link style={styleItmeDropdown} to="/categories/"> <li li className="ms-3"><a >Todos los productos</a></li></Link>
+                                    <Link style={styleItmeDropdown} to="/"> <li li className="ms-3"><a >Todos los productos</a></li></Link>
                                         <hr/>
                                         <Link style={styleItmeDropdown} to="/categories/waterproof" ><li className="ms-3">Waterproof</li></Link>
                                         <hr/>

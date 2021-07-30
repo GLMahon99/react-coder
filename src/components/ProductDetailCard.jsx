@@ -7,8 +7,7 @@ import { useContext } from '../context/Context';
 
 
 const ProductDetailCard = ({dataProduct}) => {
-
-    const {productsAdd} = useContext();
+    
 
     
     return ( 

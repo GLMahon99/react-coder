@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import { useContext } from '../context/Context';
 
-let ItemCount = ({stock, onAdd, initial} ) =>{
+let ItemCount = ({stock, onAdd ,initial} ) =>{
 
+    // const {productsAdd} = useContext();
     let [count, setCount] = useState(initial)
 
     let addCount = () => {
@@ -17,6 +19,10 @@ let ItemCount = ({stock, onAdd, initial} ) =>{
         
        count > 0 && setCount(count -1)
     }
+
+    // let onAdd = () => {
+    //     productsAdd({id: product.id, name: product.titulo, count})
+    // };
 
     return(
         <div>

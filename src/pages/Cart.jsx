@@ -9,6 +9,8 @@ const Cart = () => {
 
     return ( <>
         <h1 style={{marginTop:"70px"}}>Carrito de compras</h1>
+    {list.map((item) => (
+        
         <div className="container">
             <table class="table">
                 <thead>
@@ -23,13 +25,13 @@ const Cart = () => {
                 <tbody>
                     <tr>
                     <th scope="row">1</th>
-                        <td>Producto</td>
+                        <td>{item.titulo}</td>
                         <td>
                         <button type="button" className="btn btn-primary mx-1" >+</button>
-                            Cantidad
+                            {item.count}
                         <button type="button" className="btn btn-secondary mx-1" >-</button>
                         </td>
-                        <td>$</td>
+                        <td>${item.precio}</td>
                         
                     </tr>
                     
@@ -45,7 +47,11 @@ const Cart = () => {
                 
             </table>
             </div>
-    </>
+    
+    )
+    )
+};
+</>
      );
 }
  
