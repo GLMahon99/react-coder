@@ -9,7 +9,7 @@ const ProductsList = ({dataProducts}) => {
     
     return ( 
         <>
-            <div>
+            <div className='row row-cols-3'>
                 {dataProducts.map((item) => <ProductItem  {...item}/> )}
             </div>   
             

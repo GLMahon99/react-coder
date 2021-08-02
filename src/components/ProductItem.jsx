@@ -19,7 +19,7 @@ const ProductItem = ({titulo, img, id}) => {
             <Link style={{textDecoration: "none"}} to={`/products/${id}`}>
             <div className="col my-2">
                     <div className="card">
-                        <img src={img} className="card-img-top" alt="..."/>
+                        <img src={img} className="card-img-top container my-1" alt="..." style={{width:'60%'}}/>
                         <div className="card-body">
                             <h5 className="card-title" style={styleTitle}>{titulo}</h5>
                         </div>

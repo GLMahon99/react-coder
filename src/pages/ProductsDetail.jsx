@@ -16,12 +16,12 @@ const ProductsDetail = () => {
     useEffect(() => {
         
         new Promise ((resolve, reject) => {
-            setTimeout(() => resolve( productId ? dataBase.filter((product) => product.id === productId) : dataBase), 2000 );
+            setTimeout(() => resolve( productId ? dataBase.filter((product) => product.id === productId) : dataBase), 1000 );
         }).then(
             (dataResolve) => {
                 setDataProduct(dataResolve);
         })
-    }, [productId])
+    }, [])
 
     
 

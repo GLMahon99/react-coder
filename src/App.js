@@ -13,6 +13,7 @@ import Cart from './pages/Cart';
 import Products from './pages/Products';
 import About from './pages/About';
 import ProductsDetail from './pages/ProductsDetail';
+import Footer from './components/footer';
 
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
 
         </Switch>
         
-      
+      <Footer/>
       </Router> 
       </ContextProvider> 
     </div>

@@ -52,7 +52,7 @@ const Products = () => {
     return ( 
         <>
             <h1 style={{marginTop:"70px"}}>productos</h1>
-            <div className="row row-cols-3 container-fluid mx-2">
+            <div className=" container-fluid mx-2">
                 <ProductsList dataProducts={dataProducts}/>
                 
                 {/* <Link to={`/products/${1}`}></Link>
