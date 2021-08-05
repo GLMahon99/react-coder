@@ -16,7 +16,7 @@ const styleIcons = {
 
 const Footer = () => {
     return ( 
-                <footer className="footer shadow p-3 position-relative bottom-0 mt-4" style={styleFooter} >
+                <footer className="footer shadow p-3 position-relative bottom-0  container-fluid" style={styleFooter} >
                     <div className="container-fluid">
                         <div className="row row-cols-lg-3">
                             <div

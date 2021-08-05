@@ -12,27 +12,30 @@ import dataBase from '../components/ProductsData';
 const ProductsDetail = () => {
     const [dataProduct, setDataProduct] = useState([])
     const { productId } = useParams();
+    //paso a numero el parametro
+    const numberProduct = parseInt(productId);
+
+    const filterData = dataBase.find((product) => product.id === numberProduct);
 
     useEffect(() => {
         
         new Promise ((resolve, reject) => {
-            setTimeout(() => resolve( productId ? dataBase.filter((product) => product.id === productId) : dataBase), 1000 );
+            setTimeout(() => resolve(filterData), 1000 );
         }).then(
             (dataResolve) => {
                 setDataProduct(dataResolve);
         })
-    }, [])
+    }, [numberProduct])
 
     
 
-    console.log(productId);
+    
 
 
 
     return ( 
         <>
-            <div className="container">
-                <h1 style={{marginTop:"70px"}}>producto segun el id {productId}</h1>
+            <div className="container" style={{marginTop:'10%'}}>
                  <ProductDetailCard dataProduct={dataProduct}/>
             </div>
             
