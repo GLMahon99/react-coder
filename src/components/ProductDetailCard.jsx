@@ -13,14 +13,14 @@ const ProductDetailCard = ({dataProduct}) => {
     // onAdd(quantityToAdd){
     //     //capturo los items enviados del item count
     // }
-
+    //estado de cantidad a agregar
     const [quantityToAdd, setQuantityToAdd] = useState(undefined)
     //estado para mantener oculto el boton "finalizar compra"
     const [Hidden, setHidden] = useState(true)
 
-    const onAdd = (number) => {
-        setQuantityToAdd(number)
-        alert(`Se agregaron ${number} items al carrito`)
+    const onAdd = (numero) => {
+        setQuantityToAdd(numero)
+        alert(`Se agregaron ${numero} items al carrito`)
     } 
 
     useEffect(()=>{
@@ -28,13 +28,14 @@ const ProductDetailCard = ({dataProduct}) => {
     }, [quantityToAdd])
 
     console.log(dataProduct.img)
+    console.log('cantidad a agregar', quantityToAdd)
     return ( 
         <>
             <div className="mb-3">
                 <div className="row row-col-2">
                     <div className="col d-flex justify-content-center">
                         
-                            <img className="w-75" src={dataProduct.img} alt=""/>
+                            <img className="w-75 " src={dataProduct.img} alt=""/>
                         
                         {/* <CarouselProductCard img={dataProduct.img} /> */}
                     </div>
@@ -43,7 +44,7 @@ const ProductDetailCard = ({dataProduct}) => {
                             <h5 className="">{dataProduct.titulo}</h5>
                             <p className="">{dataProduct.descripcion}</p>
                             <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={3} initial={1}/>
-                            <button hidden={Hidden} as={Link}>Finalizar Compra</button>
+                            <button className="btn btn-outline-success mt-2" hidden={Hidden} >Terminar mi compra</button>
                         </div>
                     </div>
                 </div>

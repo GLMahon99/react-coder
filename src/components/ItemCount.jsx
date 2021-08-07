@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { useContext } from '../context/Context';
 
-let ItemCount = ({stock, onAdd ,initial, hiddeButton} ) =>{
+let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{
 
     // const {productsAdd} = useContext();
     let [count, setCount] = useState(initial)
@@ -21,11 +21,11 @@ let ItemCount = ({stock, onAdd ,initial, hiddeButton} ) =>{
     // };
 
     return(
-        <div hidden={hiddeButton}>
+        <div hidden={hideButton}>
             <p>{count}</p>
             <button type="button" className="btn btn-primary mx-1"  onClick={addCount}>+</button>
             <button type="button" className="btn btn-secondary mx-1" onClick={outCount}>-</button>
-            <button type="button" className="btn btn-warning mx-1"  onClick={onAdd}>Agregar al carrito</button>
+            <button type="button" className="btn btn-warning mx-1" onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 

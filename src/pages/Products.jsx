@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 // import { Link } from 'react-router-dom';
 import ProductsList from '../components/ProductsList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dataBase from '../components/ProductsData';
+import dataBase from '../productsData';
 import { useParams } from 'react-router-dom';
 
 

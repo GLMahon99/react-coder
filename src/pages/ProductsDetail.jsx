@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ProductDetailCard from '../components/ProductDetailCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dataBase from '../components/ProductsData';
+import dataBase from '../productsData';
 
 
 
@@ -30,11 +30,6 @@ const ProductsDetail = () => {
     }, [numberProduct])
 
     
-
-    
-
-
-
     return ( 
         <>
             <div className="container" style={{marginTop:'10%'}}>
