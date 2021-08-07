@@ -16,6 +16,8 @@ const ProductsDetail = () => {
     const numberProduct = parseInt(productId);
 
     const filterData = dataBase.find((product) => product.id === numberProduct);
+    
+    
 
     useEffect(() => {
         

@@ -10,7 +10,7 @@ const dataBase = [{
     titulo: "Tapones para oídos silicona hipoalergénica moldeable 12 cajas (24 pares)",
     precio: 1650,
     color: "incoloro",
-    img: "https://ibb.co/tm3BvNg",
+    img: "https://i.ibb.co/vwD1Trp/inc.png",
     descripcion: 
         "Se adaptan cómodamente al oído. Mejoran notablemente la calidad de horas de sueño, aislando los ruidos molestos. Protegen del ingreso de agua al conducto auditivo. Reducen 22 decibeles. Incluye estuche para su almacenamiento."
     
@@ -26,7 +26,7 @@ const dataBase = [{
     titulo: "Tapones para oídos silicona hipoalergénica moldeable 12 cajas (24 pares)",
     precio: 1650,
     color: "fluo",
-    img: "https://ibb.co/hMZjStk",
+    img: "https://i.ibb.co/sP6GZMh/fluo.png",
     descripcion: "Se adaptan cómodamente al oído. Mejoran notablemente la calidad de horas de sueño, aislando los ruidos molestos. Protegen del ingreso de agua al conducto auditivo. Reducen 22 decibeles. Incluye estuche para su almacenamiento."
   
   } ,
@@ -41,7 +41,7 @@ const dataBase = [{
     titulo: "Tapones para oídos silicona hipoalergénica moldeable 12 cajas (24 pares)",
     precio: 1650,
     color: "nude",
-    img: "https://ibb.co/k25661Y",
+    img: "https://i.ibb.co/GQn33Tg/nude.png",
     descripcion: "Se adaptan cómodamente al oído. Mejoran notablemente la calidad de horas de sueño, aislando los ruidos molestos. Protegen del ingreso de agua al conducto auditivo. Reducen 22 decibeles. Incluye estuche para su almacenamiento."
   
   },
@@ -55,7 +55,7 @@ const dataBase = [{
     titulo: "Tapones para oídos Goma Soft Expandible por 12 cajas (12 pares)",
     precio: 1224,
     color: "naranja",
-    img: "https://ibb.co/bKMj2fW",
+    img: "https://i.ibb.co/z4TW7kn/soft.png",
     descripcion: 
         "Protegen de ruidos molestos, transito vehicular,música, máquinas, etc. Reducen 29 decibeles. Se ajustan sellando el canal auditivo. Tapones con cordón. Incluye estuche para su almacenamiento"
         
@@ -73,7 +73,7 @@ const dataBase = [{
     titulo: "Tapones para oídos silicona Vulcanizada Hipoalergénica por 12 cajas (12 pares)",
     precio: 1260,
     color: "verde",
-    img: "https://ibb.co/J5n7kG0",
+    img: "https://i.ibb.co/zGsRfBj/vulcan.png",
     descripcion: "Protegen de ruidos molestos, transito vehicular, música, máquinas, etc. Protegen del ingreso de agua al conducto auditivo. Reducen 26 decibeles. Tapones con cordón. Se adaptan cómodamente al oído. Máxima adherencia."
         
     
@@ -86,7 +86,7 @@ const dataBase = [{
     titulo: "Tapones para oídos SPLASH Silicona Moldeable por 12 cajas (24 pares)",
     precio: 1650,
     color: "amarillo fluo",
-    img: "https://ibb.co/ZBTB516",
+    img: "https://i.ibb.co/rxyxYfG/splash.png",
     descripcion: 
         "Se adaptan cómodamente al oído. Máxima adherencia. Protegen del ingreso de agua al conducto auditivo. Ayudan a prevenir infecciones. Ideal para deportes acuáticos. Para uso en pileta, playa y ducha. Incluye estuche para su almacenamiento. Su color amarillo fluo permite localizarlos fácilmente en caso de extravío."
     

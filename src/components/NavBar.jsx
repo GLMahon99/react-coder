@@ -64,7 +64,7 @@ function NavBar(){
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>
                             </div>      
                         </div>
-                        <Link to="/cart"><CartWidget/> </Link>
+                        <Link as={Link} to="/cart"><CartWidget/> </Link>
                     </div>
                 </nav>
             </div>

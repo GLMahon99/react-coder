@@ -2,22 +2,18 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { useContext } from '../context/Context';
 
-let ItemCount = ({stock, onAdd ,initial} ) =>{
+let ItemCount = ({stock, onAdd ,initial, hiddeButton} ) =>{
 
     // const {productsAdd} = useContext();
     let [count, setCount] = useState(initial)
 
     let addCount = () => {
-        if(stock > 1 && count < stock){
-            setCount(count ++)
-        }
-        else {
-            alert("no hay mas stock disponible");
-        }
+        count < stock ? setCount(count + 1) : alert('La cantidad supera al stock disponible')
     }
     let outCount = () => {
         
-       count > 0 && setCount(count -1)
+        count > 0 ? setCount(count - 1) : alert('Las cantidades no pueden ser negativas')
+
     }
 
     // let onAdd = () => {
@@ -25,7 +21,7 @@ let ItemCount = ({stock, onAdd ,initial} ) =>{
     // };
 
     return(
-        <div>
+        <div hidden={hiddeButton}>
             <p>{count}</p>
             <button type="button" className="btn btn-primary mx-1"  onClick={addCount}>+</button>
             <button type="button" className="btn btn-secondary mx-1" onClick={outCount}>-</button>
