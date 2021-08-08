@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ItemCount from '../components/ItemCount';
 // import CarouselProductCard from './CarouselProductCard';
-import { useContext } from '../context/Context';
+import { useContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 
@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom';
 
 const ProductDetailCard = ({dataProduct}) => {
     
-    // onAdd(quantityToAdd){
-    //     //capturo los items enviados del item count
-    // }
+    //uso contexto
+    const {productsAdd} = useContext();
+
     //estado de cantidad a agregar
     const [quantityToAdd, setQuantityToAdd] = useState(undefined)
     //estado para mantener oculto el boton "finalizar compra"
@@ -21,6 +21,8 @@ const ProductDetailCard = ({dataProduct}) => {
     const onAdd = (numero) => {
         setQuantityToAdd(numero)
         alert(`Se agregaron ${numero} items al carrito`)
+
+        productsAdd({id : dataProduct.id, name: dataProduct.name, price: dataProduct.price, numero })
     } 
 
     useEffect(()=>{
@@ -44,7 +46,7 @@ const ProductDetailCard = ({dataProduct}) => {
                             <h5 className="">{dataProduct.titulo}</h5>
                             <p className="">{dataProduct.descripcion}</p>
                             <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={3} initial={1}/>
-                            <button className="btn btn-outline-success mt-2" hidden={Hidden} >Terminar mi compra</button>
+                            <Link><button className="btn btn-outline-success mt-2" hidden={Hidden}  to="/cart" >Terminar mi compra</button></Link>
                         </div>
                     </div>
                 </div>

@@ -1,15 +1,20 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {useContext} from '../context/Context'
+
+import {useContext} from '../context/CartContext'
 
 const Cart = () => {
 
-    const {list} = useContext();
-
+    const {listCart} = useContext();
+    
+    if (listCart == 0){
+        return(
+            <h5 className="container py-5" style={{marginTop:"70px"}}>Carrito de compras vacío</h5>
+        )
+    }  else{
 
     return ( <>
         <h1 style={{marginTop:"70px"}}>Carrito de compras</h1>
-    {list.map((item) => (
+    {listCart.map((item) => (
         
         <div className="container">
             <table class="table">
@@ -24,35 +29,42 @@ const Cart = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">1</th>
-                        <td>{item.titulo}</td>
+                    <th scope="row">{item.id}</th>
+                        <td>{item.name}</td>
                         <td>
-                        <button type="button" className="btn btn-primary mx-1" >+</button>
-                            {item.count}
-                        <button type="button" className="btn btn-secondary mx-1" >-</button>
+                        <button type="button" className="btn btn-primary p-1 mx-1" >+</button>
+                            <span className="mx-2">{item.numero}</span>
+                        <button type="button" className="btn btn-secondary p-1 mx-1" >-</button>
                         </td>
-                        <td>${item.precio}</td>
+                        <td>${ item.price * item.numero}</td>
                         
                     </tr>
                     
                 </tbody>
-                <tfooter>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </tfooter>
                 
+                
+            </table>
+            <table className="table">
+                <thead>
+                    <tr>
+                    <th scope="col"></th>
+                    <th scope="col">
+                        <button className="btn btn-danger">Borrar todo</button>
+                    </th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Total de compra: {}</th>
+                    
+                    </tr>
+                </thead>
             </table>
             </div>
     
+     )
     )
-    )
-};
+}; 
 </>
      );
+    }
 }
  
 export default Cart;

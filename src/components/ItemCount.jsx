@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 // import { useContext } from '../context/Context';
 
 let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{

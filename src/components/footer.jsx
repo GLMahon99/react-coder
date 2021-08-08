@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Instagram, Facebook, Twitter , Envelope} from 'react-bootstrap-icons';
 
 const styleFooter = {

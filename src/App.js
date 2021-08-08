@@ -1,7 +1,9 @@
 import React from 'react';
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //CONTEXT
-import { ContextProvider } from './context/Context';
+import { ContextProvider } from './context/CartContext';
 //components
 import Navbar from './components/NavBar';
 //import ItemListContainer from './components/ItemListContainer';
@@ -37,7 +39,7 @@ function App() {
           </Route>
         
         
-          <Route path="/cart">
+          <Route exact path="/cart">
             <Cart/>
           </Route>
           
