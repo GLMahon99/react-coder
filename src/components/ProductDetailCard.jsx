@@ -20,7 +20,7 @@ const ProductDetailCard = ({dataProduct}) => {
 
     const onAdd = (numero) => {
         setQuantityToAdd(numero)
-        alert(`Se agregaron ${numero} items al carrito`)
+        // alert(`Se agregaron ${numero} items al carrito`)
 
         productsAdd({id : dataProduct.id, name: dataProduct.name, price: dataProduct.price, numero })
     } 
@@ -46,7 +46,7 @@ const ProductDetailCard = ({dataProduct}) => {
                             <h5 className="">{dataProduct.titulo}</h5>
                             <p className="">{dataProduct.descripcion}</p>
                             <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={3} initial={1}/>
-                            <Link><button className="btn btn-outline-success mt-2" hidden={Hidden}  to="/cart" >Terminar mi compra</button></Link>
+                            <Link to="/cart"><button className="btn btn-outline-success mt-2" hidden={Hidden}   >Terminar mi compra</button></Link>
                         </div>
                     </div>
                 </div>

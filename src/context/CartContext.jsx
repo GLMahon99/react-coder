@@ -6,6 +6,7 @@ export const useContext = () => React.useContext(Context);
 
 export const ContextProvider = props => {
   const [listCart, setListCart] = useState([]);
+  
 
 
   const productsAdd = itemCount => {
@@ -24,12 +25,36 @@ export const ContextProvider = props => {
     }
   };
   
-  const removeItem = _ =>{
+  const removeItemCart = itemCount => {
+  // const filterToRemove = listCart.filter((i) => i.id !== itemCount.id )
+  
+  
+  const indice = listCart.indexOf(itemCount.id); 
+  listCart.splice(indice, 1)
+  
+  // console.log('filter',filterToRemove)
+  // console.log('splice',listCart)
+
     
+
+    console.log('splice',listCart)
+  
+  
   }
 
+  const clear = () =>  setListCart([]);
+  // console.log('clear', listCart)
+  
+  const totalPrice = () => listCart.reduce((accumulator, item) => accumulator + item.price * item.numero, 0);
+  
+
+  const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.numero, 0);
+  
+
+    
+
   return (
-    <Context.Provider value={{listCart, productsAdd}}>
+    <Context.Provider value={{listCart, productsAdd, removeItemCart, clear, totalPrice, totalItems}}>
       {props.children}
     </Context.Provider>
   );

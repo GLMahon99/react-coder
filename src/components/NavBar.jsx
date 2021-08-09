@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import CartWidget from './CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { Link} from "react-router-dom";
+
+
 
 const styleLogo = {
     width: "20%",
@@ -31,6 +33,9 @@ const styleItmeDropdown = {
 
 
 function NavBar(){
+
+    // const { totalItems } = useContext();
+
     return(
         
         <div className="header row shadow fixed-top">
@@ -64,7 +69,7 @@ function NavBar(){
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>
                             </div>      
                         </div>
-                        <Link  to="/cart"><CartWidget/> </Link>
+                        <Link  to="/cart"><CartWidget /> </Link>
                     </div>
                 </nav>
             </div>
