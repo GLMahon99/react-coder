@@ -34,7 +34,7 @@ const styleItmeDropdown = {
 
 function NavBar(){
 
-    // const { totalItems } = useContext();
+    const { totalItems } = useContext();
 
     return(
         
@@ -69,7 +69,7 @@ function NavBar(){
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>
                             </div>      
                         </div>
-                        <Link  to="/cart"><CartWidget /> </Link>
+                        <Link  to="/cart"><CartWidget cartCounter={totalItems} /> </Link>
                     </div>
                 </nav>
             </div>
