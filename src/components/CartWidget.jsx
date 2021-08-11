@@ -3,11 +3,10 @@ import { Cart2 } from 'react-bootstrap-icons';
 function CartWidget({cartCounter}){
 
     return(
-        <>
-            <Cart2 style={{color:'white', fontSize:"25px"}}>
-                <span>{cartCounter}</span>
-            </Cart2>
-        </>
+        <div style={{color:"white", textDecoration:"none"}}>
+            <Cart2 style={{ fontSize:"25px"}}/>
+            <span >{cartCounter}</span>
+        </div>
         
     )
     

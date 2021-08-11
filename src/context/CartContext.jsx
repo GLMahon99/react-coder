@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 export const Context = React.createContext();
 export const useContext = () => React.useContext(Context);
 
 
 
 export const ContextProvider = props => {
+
   const [listCart, setListCart] = useState([]);
+  const [totalPriceCart, setTotalPriceCart] = useState(0)
   
 
 
@@ -25,36 +27,36 @@ export const ContextProvider = props => {
     }
   };
   
-  const removeItemCart = itemCount => {
-  // const filterToRemove = listCart.filter((i) => i.id !== itemCount.id )
-  
-  
-  const indice = listCart.indexOf(itemCount.id); 
-  listCart.splice(indice, 1)
-  
-  // console.log('filter',filterToRemove)
-  // console.log('splice',listCart)
+  // const removeItemCart = (itemCount) => {
+  //   const filterToRemove = listCart.filter((i) => i.id !== itemCount.id);
+  //   setListCart(filterToRemove);
+  //   };
+  // Funcio removeItemCart reducida
+  const removeItemCart = (itemCount) => {setListCart(listCart.filter((i) => i.id !== itemCount.id))
+    console.log(listCart)
+  };
 
-    
-
-    console.log('splice',listCart)
   
-  
-  }
 
   const clear = () =>  setListCart([]);
   // console.log('clear', listCart)
   
-  const totalPrice = () => listCart.reduce((accumulator, item) => accumulator + item.price * item.numero, 0);
   
 
-  const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.numero, 0);
+  const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.numberUnits, 0);
   
+  useEffect(() => {
+    // Calculate total price
+    let result = listCart.reduce((accumulator, item) => accumulator + item.price * item.numberUnits, 0)
+    setTotalPriceCart(result);
+
+    
+  }, [listCart])
 
     
 
   return (
-    <Context.Provider value={{listCart, productsAdd, removeItemCart, clear, totalPrice, totalItems}}>
+    <Context.Provider value={{listCart, productsAdd, removeItemCart, clear, totalPriceCart, totalItems}}>
       {props.children}
     </Context.Provider>
   );

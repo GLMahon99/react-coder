@@ -50,19 +50,12 @@ const Products = () => {
     
 
     return ( 
-        <>
+        <div className="my-5">
             <h1 style={{marginTop:"70px"}}>productos</h1>
             <div className=" container-fluid mx-2">
                 <ProductsList dataProducts={dataProducts}/>
-                
-                {/* <Link to={`/products/${1}`}></Link>
-                <Link to={`/products/${2}`}><ProductsList/></Link>
-                <Link to={`/products/${3}`}><ProductsList/></Link>
-                <Link to={`/products/${4}`}><ProductsList/></Link>
-                <Link to={`/products/${5}`}><ProductsList/></Link>
-                <Link to={`/products/${6}`}></Link> */}
             </div>
-        </>
+        </div>
      );
     
 }

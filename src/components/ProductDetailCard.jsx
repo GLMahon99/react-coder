@@ -14,23 +14,23 @@ const ProductDetailCard = ({dataProduct}) => {
     const {productsAdd} = useContext();
 
     //estado de cantidad a agregar
-    const [quantityToAdd, setQuantityToAdd] = useState(undefined)
+    const [numberUnitsToAdd, setnumberUnitsToAdd] = useState(undefined)
     //estado para mantener oculto el boton "finalizar compra"
     const [Hidden, setHidden] = useState(true)
 
-    const onAdd = (numero) => {
-        setQuantityToAdd(numero)
+    const onAdd = (numberUnits) => {
+        setnumberUnitsToAdd(numberUnits)
         // alert(`Se agregaron ${numero} items al carrito`)
 
-        productsAdd({id : dataProduct.id, name: dataProduct.name, price: dataProduct.price, numero })
+        productsAdd({id : dataProduct.id, name: dataProduct.name, price: dataProduct.price, numberUnits })
     } 
 
     useEffect(()=>{
-        quantityToAdd ? setHidden(false) : setHidden(true)
-    }, [quantityToAdd])
+        numberUnitsToAdd ? setHidden(false) : setHidden(true)
+    }, [numberUnitsToAdd])
 
     console.log(dataProduct.img)
-    console.log('cantidad a agregar', quantityToAdd)
+    console.log('cantidad a agregar', numberUnitsToAdd)
     return ( 
         <>
             <div className="mb-3">

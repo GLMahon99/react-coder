@@ -1,6 +1,8 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import CartWidget from './CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {useContext} from '../context/CartContext'
 
 
 import { Link} from "react-router-dom";
@@ -34,7 +36,7 @@ const styleItmeDropdown = {
 
 function NavBar(){
 
-    const { totalItems } = useContext();
+    const { totalItems, listCart } = useContext();
 
     return(
         
@@ -69,7 +71,12 @@ function NavBar(){
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>
                             </div>      
                         </div>
-                        <Link  to="/cart"><CartWidget cartCounter={totalItems} /> </Link>
+                        {
+                            (listCart.length > 0) &&(
+                                <Link  to="/cart"><CartWidget cartCounter={totalItems()} /> </Link>
+                            )
+                        }
+                        
                     </div>
                 </nav>
             </div>
