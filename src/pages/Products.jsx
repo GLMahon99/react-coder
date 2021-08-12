@@ -5,14 +5,7 @@ import ProductsList from '../components/ProductsList';
 import dataBase from '../productsData';
 import { useParams } from 'react-router-dom';
 
-
-
-//PETICION API FUTURA
-// const fetchDataProducts = async () => {
-//     const data = await fetch("./src/api.json");
-//     console.log(data)
-
-// }
+import { getFirestore } from '../firebase';
 
 
 const Products = () => {
