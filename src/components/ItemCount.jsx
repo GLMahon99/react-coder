@@ -22,10 +22,11 @@ let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{
 
     return(
         <div hidden={hideButton}>
-            <p>{count}</p>
+            
             <button type="button" className="btn btn-primary mx-1"  onClick={addCount}>+</button>
+            <span className="mx-1">{count}</span>
             <button type="button" className="btn btn-secondary mx-1" onClick={outCount}>-</button>
-            <button type="button" className="btn btn-warning mx-1" onClick={() => onAdd(count)}>Agregar al carrito</button>
+            <button type="button" className="btn btn-warning mx-3" onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 

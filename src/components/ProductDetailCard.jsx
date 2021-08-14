@@ -22,7 +22,7 @@ const ProductDetailCard = ({dataProduct}) => {
         setnumberUnitsToAdd(numberUnits)
         // alert(`Se agregaron ${numero} items al carrito`)
 
-        productsAdd({id : dataProduct.id, name: dataProduct.name, price: dataProduct.price, numberUnits })
+        productsAdd({id : dataProduct.id, name: dataProduct.title, price: dataProduct.price, numberUnits })
     } 
 
     useEffect(()=>{
@@ -43,10 +43,10 @@ const ProductDetailCard = ({dataProduct}) => {
                     </div>
                     <div className="col">
                         <div className="">
-                            <h5 className="">{dataProduct.titulo}</h5>
-                            <p className="">{dataProduct.descripcion}</p>
-                            <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={3} initial={1}/>
-                            <Link to="/cart"><button className="btn btn-outline-success mt-2" hidden={Hidden}   >Terminar mi compra</button></Link>
+                            <h5 className="">{dataProduct.title}</h5>
+                            <p className="">{dataProduct.description}</p>
+                            <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={dataProduct.stock} initial={1}/>
+                            <Link to="/cart"><button className="btn btn-outline-success mt-2" hidden={Hidden}>Terminar mi compra</button></Link>
                         </div>
                     </div>
                 </div>

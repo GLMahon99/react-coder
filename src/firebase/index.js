@@ -1,7 +1,8 @@
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyBDxKEEW3vkLhDUBvxd9NQhyBm0UGD266U",
     authDomain: "earplugs-ecommerce.firebaseapp.com",
     projectId: "earplugs-ecommerce",
