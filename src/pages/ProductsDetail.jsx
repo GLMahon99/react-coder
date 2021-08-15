@@ -16,39 +16,13 @@ const ProductsDetail = () => {
     //paso a numero el parametro
     // const numberProduct = parseInt(id);
 
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
 
-    // const filterData = dataBase.find((product) => product.id === numberProduct);
     
     
-
-    // useEffect(() => {
-        
-    //     new Promise ((resolve, reject) => {
-    //         setTimeout(() => resolve(filterData), 1000 );
-    //     }).then(
-    //         (dataResolve) => {
-    //             setDataProduct(dataResolve);
-    //     })
-    // }, [numberProduct])
-
-    // useEffect(() => {
-    //     setLoading(true)
-    //     const db = getFirestore();
-    //     const itemCollection = db.itemCollection("items");
-    //     itemCollection.get().then((querySnapshot) => {
-    //         if(querySnapshot.size === 0){
-    //             console.log('no results');
-    //         }
-    //         setDataProduct(querySnapshot.docs.map(doc => doc.data()));
-    //     }).catch((error) => {
-    //         console.log('error al cargar items', error);
-    //     }).finally(() => {
-    //         setLoading(false)
-    //     })
-        
     
-    //   }, [numberProduct])
+
+    
 
     useEffect(() => {
     

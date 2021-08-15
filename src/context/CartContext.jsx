@@ -43,11 +43,11 @@ export const ContextProvider = props => {
   
   
 
-  const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.numberUnits, 0);
+  const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.count, 0);
   
   useEffect(() => {
     // Calculate total price
-    let result = listCart.reduce((accumulator, item) => accumulator + item.price * item.numberUnits, 0)
+    let result = listCart.reduce((accumulator, item) => accumulator + item.price * item.count, 0)
     setTotalPriceCart(result);
 
     

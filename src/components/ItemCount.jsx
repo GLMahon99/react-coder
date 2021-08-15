@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 // import { useContext } from '../context/Context';
 
-let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{
+let ItemCount = ({stock, onAdd ,count, setCount} ) =>{
 
     // const {productsAdd} = useContext();
-    let [count, setCount] = useState(initial)
+    
 
     let addCount = () => {
         count < stock ? setCount(count + 1) : alert('La cantidad supera al stock disponible')
@@ -19,7 +19,7 @@ let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{
    
 
     return(
-        <div hidden={hideButton}>
+        <div  className="my-4">
             
             <button type="button" className="btn btn-primary mx-1"  onClick={addCount}>+</button>
             <span className="mx-1">{count}</span>

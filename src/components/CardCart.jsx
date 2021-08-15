@@ -35,11 +35,11 @@ const CardCart = ({dataCart}) => {
                         <td>{dataCart.name}</td>
                         <td>
                         {/* <button type="button" className="btn btn-primary p-1 mx-1" onClick={() => countSum(dataCart)} >+</button> */}
-                            <span className="mx-2">{dataCart.numberUnits}</span>
+                            <span className="mx-2">{dataCart.count}</span>
                         {/* <button type="button" className="btn btn-secondary p-1 mx-1" onClick={() => countRes(dataCart)} >-</button> */}
                         </td>
                         <td>
-                            <span>${ dataCart.price * dataCart.numberUnits}</span> 
+                            <span>${ dataCart.price * dataCart.count}</span> 
                             <button className="btn btn-danger p-1 ms-3" onClick={() => {removeItemCart(dataCart)}}>x</button>
                         </td>
                         

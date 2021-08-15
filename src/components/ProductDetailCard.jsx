@@ -13,24 +13,28 @@ const ProductDetailCard = ({dataProduct}) => {
     //uso contexto
     const {productsAdd} = useContext();
 
-    //estado de cantidad a agregar
-    const [numberUnitsToAdd, setNumberUnitsToAdd] = useState(undefined)
-    //estado para mantener oculto el boton "finalizar compra"
-    const [Hidden, setHidden] = useState(true)
+    
+    
 
-    const onAdd = (numberUnits) => {
-        setNumberUnitsToAdd(numberUnits)
+    const [count, setCount] = useState(1)
+    //estado para mantener oculto el boton "finalizar compra"
+    const [hidden, setHidden] = useState(true)
+    const [selectCount, setSelectCount] = useState(false)
+
+    
+
+    const onAdd = () => {
+        setHidden(true)
+        setSelectCount(true)
         // alert(`Se agregaron ${numero} items al carrito`)
 
-        productsAdd({id : dataProduct.id, name: dataProduct.title, price: dataProduct.price, numberUnits, code: dataProduct.code, stock: dataProduct.stock })
+        productsAdd({id : dataProduct.id, name: dataProduct.title, price: dataProduct.price, count, code: dataProduct.code, stock: dataProduct.stock })
     } 
 
-    useEffect(()=>{
-        numberUnitsToAdd ? setHidden(false) : setHidden(true)
-    }, [numberUnitsToAdd])
+    
 
     console.log(dataProduct.img)
-    console.log('cantidad a agregar', numberUnitsToAdd)
+    console.log('cantidad a agregar', count)
     return ( 
         <>
             <div className="mb-3">
@@ -43,10 +47,14 @@ const ProductDetailCard = ({dataProduct}) => {
                     </div>
                     <div className="col">
                         <div className="">
-                            <h5 className="">{dataProduct.title}</h5>
-                            <p className="">{dataProduct.description}</p>
-                            <ItemCount hideButton={!Hidden} onAdd={onAdd} stock={dataProduct.stock} initial={1}/>
-                            <Link to="/cart"><button className="btn btn-outline-success mt-2" hidden={Hidden}>Terminar mi compra</button></Link>
+                            <h5 className="my-1">{dataProduct.title}</h5>
+                            <p className="my-1">{dataProduct.description}</p>
+                            <span className="my-1">Precio unitario: ${dataProduct.price} </span>
+                            {
+                            selectCount ? (<Link to="/cart"><div className="my-3"><button className="btn btn-outline-success mt-2" >Terminar mi compra</button></div></Link>) :
+                            (<ItemCount  onAdd={onAdd} stock={dataProduct.stock} count={count} setCount={setCount}/>)
+                            
+                            }
                         </div>
                     </div>
                 </div>

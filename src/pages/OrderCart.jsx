@@ -116,6 +116,7 @@ const OrderCart = () => {
                 </div>
                 
             </div>
+            
             <button className="btn btn-primary" onClick={sendFormData} >Confirmar compra</button>
         </form>
       </div>
