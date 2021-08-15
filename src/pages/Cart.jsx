@@ -2,13 +2,14 @@ import React from 'react';
 import CardCart from '../components/CardCart';
 
 import {useContext} from '../context/CartContext'
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
     const {listCart, clear, totalPriceCart, totalItems} = useContext();
 
     return(
-        <div style={{marginTop:"5%"}}>
+        <div style={{marginTop:"5%", marginBottom:"5%"}} >
         <h2>Carrito de Compras</h2>
         {
             (listCart.length > 0) ? (
@@ -42,7 +43,13 @@ const Cart = () => {
                                 </tr>
                             </thead>
                         </table>
+                        <Link to="/cart/order">
+                            <button className='btn btn-success'>
+                                Finalizar orden
+                            </button>
+                        </Link>
                     </div>
+                    
                 
             ) : (
                 <h5 className="container py-5" style={{marginTop:"70px"}}>Carrito de compras vacío</h5>

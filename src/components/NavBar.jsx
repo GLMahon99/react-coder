@@ -43,9 +43,12 @@ function NavBar(){
         <div className="header row shadow fixed-top">
             <div>
                 <nav style={{backgroundColor:'#183dc2'}} className="navbar navbar-expand-lg navbar-dark">
-                    <div className="container-fluid d-flex justify-content-around">
-                        <Link  to="/"><img style={styleLogo} className="logo-2 my-1" src="images/favicon.ico"alt="logo-Earplugs-2"/></Link>
-                        <div id="navbarNavAltMarkup">
+                    <div className="container-fluid row row-cols-3">
+                        <div className="col d-flex justify-content-center">
+                            <Link  to="/"><img style={styleLogo} className="logo-2 my-1" src="images/favicon.ico"alt="logo-Earplugs-2"/></Link>
+                        </div>
+                        
+                        <div id="navbarNavAltMarkup" className="col d-flex justify-content-center">
                             <div className="navbar-nav pt-2">
                                 <Link style={styleLink} to="/" className="nav-link active mx-3" >Inicio</Link>
                                 <Link style={styleLink} to="/about" className="nav-link active mx-3" >Nosotros</Link>
@@ -71,12 +74,13 @@ function NavBar(){
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>
                             </div>      
                         </div>
-                        {
-                            (listCart.length > 0) &&(
-                                <Link  to="/cart"><CartWidget cartCounter={totalItems()} /> </Link>
-                            )
-                        }
-                        
+                        <div className="col d-flex justify-content-center">
+                            {
+                                (listCart.length > 0) &&(
+                                    <Link  to="/cart"><CartWidget cartCounter={totalItems()} /> </Link>
+                                )
+                            }
+                        </div>
                     </div>
                 </nav>
             </div>

@@ -84,9 +84,12 @@ const Products = () => {
     return ( 
       
         
-        <div className="my-5">
-            <h1 style={{marginTop:"70px"}}>productos</h1>
-            <div className=" container-fluid mx-2">
+        <div className="my-5 container-fluid">
+          <div className="d-flex justify-content-center">
+            <h1 style={{marginTop:"70px", fontFamily:"arial", fontWeight:"bold", fontSize:"60px", color:"gray"}} >Productos</h1>
+          </div>
+            
+            <div className=" container">
                 <ProductsList dataProducts={dataProducts}/>
             </div>
         </div>

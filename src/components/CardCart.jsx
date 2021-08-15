@@ -26,12 +26,12 @@ const CardCart = ({dataCart}) => {
     //       removeItemCart(dataCart.id);
     //     }
     //   }
-
+      
     return ( 
         <>
             <tbody>
                     <tr>
-                    <th scope="row">{dataCart.id}</th>
+                    <th scope="row">{dataCart.code}</th>
                         <td>{dataCart.name}</td>
                         <td>
                         {/* <button type="button" className="btn btn-primary p-1 mx-1" onClick={() => countSum(dataCart)} >+</button> */}

@@ -16,9 +16,7 @@ let ItemCount = ({stock, onAdd ,initial, hideButton} ) =>{
 
     }
 
-    // let onAdd = () => {
-    //     productsAdd({id: product.id, name: product.titulo, count})
-    // };
+   
 
     return(
         <div hidden={hideButton}>

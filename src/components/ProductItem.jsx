@@ -18,9 +18,9 @@ const ProductItem = ({title, img, id}) => {
             ) : (
             <Link style={{textDecoration: "none"}} to={`/products/${id}`}>
             <div className="col my-2">
-                    <div className="card">
-                        <img src={img} className="card-img-top container my-1" alt="..." style={{width:'60%'}}/>
-                        <div className="card-body">
+                    <div className="card mx-2">
+                        <img src={img} className="card-img-top container my-1" alt="..." style={{width:'100%'}}/>
+                        <div className="card-body d-flex justify-content-center">
                             <h5 className="card-title" style={styleTitle}>{title}</h5>
                         </div>
                         

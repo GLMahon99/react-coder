@@ -14,7 +14,7 @@ const ProductsDetail = () => {
     
     const { productId } = useParams();
     //paso a numero el parametro
-    const numberProduct = parseInt(productId);
+    // const numberProduct = parseInt(id);
 
     const [loading, setLoading] = useState(false)
 
@@ -53,7 +53,7 @@ const ProductsDetail = () => {
     useEffect(() => {
     
         let db = getFirestore();
-        let itemCollection = db.collection("items");
+        let itemCollection = db.collection("items").doc(productId);
     
         itemCollection.get().then((querySnapshot) => {
             if (querySnapshot.exists) {
@@ -67,7 +67,7 @@ const ProductsDetail = () => {
         
       }, [productId])
     
-
+      console.log('este es mi id', productId);
     
     return ( 
         <>
