@@ -10,7 +10,7 @@ import { getFirestore } from '../firebase';
 const OrderCart = () => {
 
   // Context
-  const { listCart, totalPriceCart, clear } = useContext();
+  const { listCart, totalPriceCart, clear, totalItems } = useContext();
   // State
   const [ order, setOrder ] = useState("");
   const [ formData, setFormData ] = useState({});
@@ -117,10 +117,10 @@ const OrderCart = () => {
                 
             </div>
             <div>
-              <p>{listCart.title}</p>
-              <span>Total de la compra: $ {totalPriceCart}</span>
+              <div><span>Cantidad de items: {totalItems()}</span></div>
+              <div><span>Total de la compra: $ {totalPriceCart}</span></div>
             </div>
-            <button className="btn btn-primary" onClick={sendFormData} >Confirmar compra</button>
+            <button className="btn btn-primary my-2" onClick={sendFormData} >Confirmar compra</button>
         </form>
       </div>
 {
