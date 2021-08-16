@@ -2,15 +2,11 @@ import React, {useState, useEffect} from "react";
 export const Context = React.createContext();
 export const useContext = () => React.useContext(Context);
 
-
-
 export const ContextProvider = props => {
 
   const [listCart, setListCart] = useState([]);
   const [totalPriceCart, setTotalPriceCart] = useState(0)
   
-
-
   const productsAdd = itemCount => {
     if (listCart.find(item => item.id === itemCount.id)) {
       const newCartItem = listCart.map(item => {
@@ -31,18 +27,15 @@ export const ContextProvider = props => {
   //   const filterToRemove = listCart.filter((i) => i.id !== itemCount.id);
   //   setListCart(filterToRemove);
   //   };
-  // Funcio removeItemCart reducida
+  // Funcion removeItemCart reducida
   const removeItemCart = (itemCount) => {setListCart(listCart.filter((i) => i.id !== itemCount.id))
     console.log(listCart)
   };
 
-  
 
   const clear = () =>  setListCart([]);
   // console.log('clear', listCart)
   
-  
-
   const totalItems = () => listCart.reduce((accumulator, item) => accumulator + item.count, 0);
   
   useEffect(() => {
@@ -52,8 +45,6 @@ export const ContextProvider = props => {
 
     
   }, [listCart])
-
-    
 
   return (
     <Context.Provider value={{listCart, productsAdd, removeItemCart, clear, totalPriceCart, totalItems}}>

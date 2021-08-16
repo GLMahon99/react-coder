@@ -16,8 +16,6 @@ let ItemCount = ({stock, onAdd ,count, setCount} ) =>{
 
     }
 
-   
-
     return(
         <div  className="my-4">
             

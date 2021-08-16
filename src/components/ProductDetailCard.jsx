@@ -6,32 +6,20 @@ import { useContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 
-
-
 const ProductDetailCard = ({dataProduct}) => {
     
     //uso contexto
     const {productsAdd} = useContext();
 
-    
-    
-
     const [count, setCount] = useState(1)
     //estado para mantener oculto el boton "finalizar compra"
-    const [hidden, setHidden] = useState(true)
+    
     const [selectCount, setSelectCount] = useState(false)
 
-    
-
     const onAdd = () => {
-        setHidden(true)
         setSelectCount(true)
-        // alert(`Se agregaron ${numero} items al carrito`)
-
         productsAdd({id : dataProduct.id, name: dataProduct.title, price: dataProduct.price, count, code: dataProduct.code, stock: dataProduct.stock })
     } 
-
-    
 
     console.log(dataProduct.img)
     console.log('cantidad a agregar', count)

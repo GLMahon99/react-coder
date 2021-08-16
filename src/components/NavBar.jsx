@@ -10,7 +10,7 @@ import { Link} from "react-router-dom";
 
 
 const styleLogo = {
-    width: "20%",
+    width: "30%",
     height: "40%",
     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 }
@@ -63,12 +63,6 @@ function NavBar(){
                                         <hr/>
                                         <Link style={styleItmeDropdown} to="/categories/soundreducers" ><li className="ms-3">Sound Reducers</li></Link>
                                         <hr/>
-                                        {/* <Link style={styleItmeDropdown} to={`/products/${4}`} ><li className="ms-3">Vulcan</li></Link>
-                                        <hr/>
-                                        <Link style={styleItmeDropdown} to={`/products/${5}`} ><li className="ms-3">Nude</li></Link>
-                                        <hr/>
-                                        <Link style={styleItmeDropdown} to={`/products/${6}`} ><li className="ms-3">Splash</li></Link> */}
-
                                     </ul>
                                 </div>
                                 <Link style={styleLink} className="nav-link active mx-3 " >Contacto </Link>

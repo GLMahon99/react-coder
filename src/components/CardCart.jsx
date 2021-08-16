@@ -28,8 +28,8 @@ const CardCart = ({dataCart}) => {
     //   }
       
     return ( 
-        <>
-            <tbody>
+            <>
+                <tbody>
                     <tr>
                     <th scope="row">{dataCart.code}</th>
                         <td>{dataCart.name}</td>
@@ -42,12 +42,9 @@ const CardCart = ({dataCart}) => {
                             <span>${ dataCart.price * dataCart.count}</span> 
                             <button className="btn btn-danger p-1 ms-3" onClick={() => {removeItemCart(dataCart)}}>x</button>
                         </td>
-                        
-                        
                     </tr>
-                    
                 </tbody>
-        </>
+            </>
      );
 }
  

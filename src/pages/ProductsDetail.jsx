@@ -2,27 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ProductDetailCard from '../components/ProductDetailCard';
 
-import dataBase from '../productsData';
-
 import { getFirestore } from '../firebase';
-
-
-
 
 const ProductsDetail = () => {
     const [dataProduct, setDataProduct] = useState([])
     
-    const { productId } = useParams();
-    //paso a numero el parametro
-    // const numberProduct = parseInt(id);
+    const { productId } = useParams();    
 
-    // const [loading, setLoading] = useState(false)
-
-    
-    
-    
-
-    
 
     useEffect(() => {
     

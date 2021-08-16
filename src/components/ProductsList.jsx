@@ -1,12 +1,7 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 
-
-
-
 const ProductsList = ({dataProducts}) => {
-
-    
     return ( 
         <>
             <div className='row row-cols-3'>
